@@ -1,0 +1,28 @@
+- 부모의 크기를 자식에게 맞추고 싶다면 overflow : auto
+
+- dom 파싱이 끝나고 js를 실행시키고 싶으면 defer 속성을 추가하자
+
+- flex : 1   // grow shrink basis 를 모두 1
+flex-grow : 남는 공간이 생길때 남은 공간의 얼만큼을 차지할거냐?
+flex-shrink : item의 요소가 부모보다 클때 얼만큼 줄어들래? 숫자가 클수록 많이 줄어듬. 
+flex-basis :  아이템의 초기 크기를
+
+- 특성 선택자
+
+```
+input[type="text"]:focus ~ div{
+            visibility: visible;
+}
+```
+
+- sibling 연산자
+
+~ 결합자는 형제, 즉 첫 번째 요소를 뒤따르면서 같은 부모를 공유하는 두 번째 요소를 선택합니다. 
+구문: A ~ B 예제: p ~ span은 <p> 요소를 뒤따르는 모든 <span> 요소와 일치합니다.
+
+input 타입이 text인 녀석과 같은 부모를 가지는 div
+```
+input[type="text"]:focus ~ div{
+            visibility: visible;
+}
+```
