@@ -1,0 +1,4 @@
+1. Prettier 설치
+2. vs코드 설정 들어가서 Default Formatter 를 Prettier로 설정
+3. 설정에서 format on save 체크
+4. 설정에서 prettier 검색해서 하든 .prettierrc  파일 만들어서 prettier 설정

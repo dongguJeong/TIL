@@ -1,0 +1,51 @@
+index.ts에서 스벨트 파일을 인식하지 못할 때
+
+1. vite-env.d.ts 파일로 생성
+
+```vite-env.d.ts
+
+/// <reference types="svelte" />
+/// <reference types="vite/client" />
+
+declare module '*.svelte' {
+  export { SvelteComponentDev as default } from 'svelte/internal';
+}
+
+```
+
+2. vite가 ts를 인식할 수 있게 만들어준다 
+
+
+- "checkJs": true,
+- "moduleResolution": "bundler",
+- include에 vite-env.d.ts 추가
+
+
+
+```tsconfig.json
+
+{
+  "extends": "./.svelte-kit/tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "moduleResolution": "bundler",
+    "verbatimModuleSyntax": true
+  },
+  "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.svelte", "vite-env.d.ts"]
+}
+
+```
+
+3. 필요한 종속성 재설치 후 에디터 재시작
+```
+
+npm install --save-dev svelte typescript svelte-preprocess svelte-check
+
+```
