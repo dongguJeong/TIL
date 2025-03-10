@@ -1,0 +1,24 @@
+````
+<script>
+	let change_count = 0;
+	let input_count = 0;
+</script>
+
+<input
+	placeholder="Type some gibberish here"
+	on:change={() => change_count += 1}
+	on:input={() => input_count += 1}
+>
+
+<p>change event count: {change_count}</p>
+<p>input event count: {input_count}</p>
+
+<style>
+	input {
+		width: 100%;
+	}
+</style>
+````
+
+스벨트에서 onchange 이벤트는 input 값이 변경되고 focus를 잃을 때 발생하고
+oninput을 하면 타이핑 마다 이벤트가 발생한다
